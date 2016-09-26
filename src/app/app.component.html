@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<h1>Detail</h1>
+<div>
+  <b>Name:</b>{{user.name}}
+  <b>Age:</b>{{user.age}}
+  <b>Weight:</b>{{user.weight}}
+  <b>Height:</b>{{user.height}}
+</div>
+<h2>Editor</h2>
+<div>
+  <input type="text" [(ngModel)]="user.name" /><br/>
+  <input type="number" [(ngModel)]="user.age" /><br/>
+  <input type="number" [(ngModel)]="user.weight" /><br/>
+  <input type="number" [(ngModel)]="user.height" /><br/>
+</div>

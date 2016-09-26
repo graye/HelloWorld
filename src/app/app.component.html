@@ -6,6 +6,8 @@
   <b>Age:</b>{{user.age}}
   <b>Weight:</b>{{user.weight}}
   <b>Height:</b>{{user.height}}
+  <span *ngIf="user.isHealthy()">Good health</span>
+  <span *ngIf="!user.isHealthy()">Bad health</span>
 </div>
 <button (click)="isEditMode=true">EDIT</button>
 </section>
@@ -16,6 +18,7 @@
   <input type="number" [(ngModel)]="user.age" /><br/>
   <input type="number" [(ngModel)]="user.weight" /><br/>
   <input type="number" [(ngModel)]="user.height" /><br/>
+  <p>{{user.getBMI()}}</p>
   <button (click)="onCheckAge()">
     Check Age
   </button>

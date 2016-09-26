@@ -12,4 +12,12 @@ export class User {
             return false;
         }
     }
+
+    getBMI():number{
+        return (this.weight * 10000)/(this.height * this.height);
+    }
+
+    isHealthy():boolean{
+        return this.getBMI() >= 18.5 && this.getBMI() <= 24.9;
+    }
 }

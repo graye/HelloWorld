@@ -28,7 +28,7 @@ export class AppComponent {
   }
 
   getBMI(){
-    var bmi = this.user.weight/(this.user.height * this.user.height);
+    var bmi = this.user.getBMI();
 
     window.alert('BMI is ' + bmi);
   }

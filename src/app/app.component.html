@@ -1,24 +1,28 @@
 <section *ngIf="!isEditMode">
-  <app-user-editor></app-user-editor>
+  <ul>
+    <li *ngFor="let item of users" (click)="selectedUser=item" class="user-selector">
+      {{item.name}} <span class="age">{{item.age}}</span>
+    </li>
+  </ul>
 <h1>{{title}}</h1>
 <h1>Detail</h1>
 <div>
-  <b>Name:</b>{{user.name}}
-  <b>Age:</b>{{user.age}}
-  <b>Weight:</b>{{user.weight}}
-  <b>Height:</b>{{user.height}}
-  <span *ngIf="user.isHealthy()">Good health</span>
-  <span *ngIf="!user.isHealthy()">Bad health</span>
+  <b>Name:</b>{{selectedUser.name}}
+  <b>Age:</b>{{selectedUser.age}}
+  <b>Weight:</b>{{selectedUser.weight}}
+  <b>Height:</b>{{selectedUser.height}}
+  <span *ngIf="selectedUser.isHealthy()">Good health</span>
+  <span *ngIf="!selectedUser.isHealthy()">Bad health</span>
 </div>
 <button (click)="isEditMode=true">EDIT</button>
 </section>
 <section *ngIf="isEditMode">
 <h2>Editor</h2>
 <div>
-  <input type="text" [(ngModel)]="user.name" /><br/>
-  <input type="number" [(ngModel)]="user.age" /><br/>
-  <input type="number" [(ngModel)]="user.weight" /><br/>
-  <input type="number" [(ngModel)]="user.height" /><br/>
+  <input type="text" [(ngModel)]="selectedUser.name" /><br/>
+  <input type="number" [(ngModel)]="selectedUser.age" /><br/>
+  <input type="number" [(ngModel)]="selectedUser.weight" /><br/>
+  <input type="number" [(ngModel)]="selectedUser.height" /><br/>
   <p>{{user.getBMI()}}</p>
   <button (click)="onCheckAge()">
     Check Age

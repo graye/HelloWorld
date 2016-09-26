@@ -20,4 +20,12 @@ export class User {
     isHealthy():boolean{
         return this.getBMI() >= 18.5 && this.getBMI() <= 24.9;
     }
+
+    constructor(name:string, age:number, password:string, height:number, weight:number){
+        this.name = name;
+        this.age=age;
+        this.password=password;
+        this.height=height;
+        this.weight=weight;
+    }
 }

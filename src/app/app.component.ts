@@ -15,10 +15,10 @@ export class AppComponent {
     this.user.name = "Jason";
     this.user.age=20;
     this.user.weight=60;
-    this.user.height=50;
+    this.user.height=150;
   }
 
-  onCheckAge(){
+  onCheckAge() {
     if(this.user.isOld()){
       window.alert('Too old');
     }
@@ -27,7 +27,7 @@ export class AppComponent {
     }
   }
 
-  getBMI(){
+  getBMI() {
     var bmi = this.user.getBMI();
 
     window.alert('BMI is ' + bmi);

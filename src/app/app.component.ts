@@ -17,4 +17,19 @@ export class AppComponent {
     this.user.weight=60;
     this.user.height=50;
   }
+
+  onCheckAge(){
+    if(this.user.isOld()){
+      window.alert('Too old');
+    }
+    else{
+      alert('Ok');
+    }
+  }
+
+  getBMI(){
+    var bmi = this.user.weight/(this.user.height * this.user.height);
+
+    window.alert('BMI is ' + bmi);
+  }
 }

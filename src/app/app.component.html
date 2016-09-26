@@ -1,9 +1,10 @@
 <section *ngIf="!isEditMode">
   <ul>
-    <li *ngFor="let item of users" (click)="selectedUser=item" class="user-selector">
-      {{item.name}} <span class="age">{{item.age}}</span>
+    <li *ngFor="let item of users;let i = index;" (click)="selectedUser=item" class="user-selector">
+      {{i}} : {{item.name}} <span class="age">{{item.age}}</span><button (click)="deleteUser(i)">Remove User</button>
     </li>
   </ul>
+  <button (click)="deleteUser(0)">Remove first user</button>
 <h1>{{title}}</h1>
 <h1>Detail</h1>
 <div>

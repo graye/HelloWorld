@@ -38,4 +38,8 @@ export class AppComponent {
 
     window.alert('BMI is ' + bmi);
   }
+
+  deleteUser(index: number){
+    this.users.splice(index, 1);
+  }
 }

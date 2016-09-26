@@ -5,7 +5,7 @@ const USERS = [
   new User('Jack', 20, '1234', 170, 65),
   new User('Pop', 30, '1234', 160, 50),
   new User('Yom', 29, '1234', 180, 85),
-  new User('Nick', 40, '1234', 175, 65),
+  new User('Nick', 140, '1234', 175, 65),
   new User('Miggie', 45, '1234', 150, 65),
 ];
 
@@ -34,9 +34,7 @@ export class AppComponent {
   }
 
   getBMI() {
-    var bmi = this.selectedUser.getBMI();
-
-    window.alert('BMI is ' + bmi);
+    return this.selectedUser.getBMI();
   }
 
   deleteUser(index: number){

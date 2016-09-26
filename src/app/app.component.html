@@ -1,15 +1,15 @@
 <section *ngIf="!isEditMode">
   <ul>
-    <li *ngFor="let item of users;let i = index;" (click)="selectedUser=item" class="user-selector">
+    <li *ngFor="let item of users | filterPipe;let i = index;" (click)="selectedUser=item" class="user-selector">
       {{i}} : {{item.name}} <span class="age">{{item.age}}</span><button (click)="deleteUser(i)">Remove User</button>
     </li>
   </ul>
   <button (click)="deleteUser(0)">Remove first user</button>
 <h1>{{title}}</h1>
-<h1>Detail</h1>
+<h1>Detail {{[1,2,3] | sumPipe}}</h1>
 <div>
   <b>Name:</b>{{selectedUser.name}}
-  <b>Age:</b>{{selectedUser.age}}
+  <b>Age:</b>{{selectedUser.age | myPipe}}
   <b>Weight:</b>{{selectedUser.weight}}
   <b>Height:</b>{{selectedUser.height}}
   <span *ngIf="selectedUser.isHealthy()">Good health</span>
@@ -24,13 +24,8 @@
   <input type="number" [(ngModel)]="selectedUser.age" /><br/>
   <input type="number" [(ngModel)]="selectedUser.weight" /><br/>
   <input type="number" [(ngModel)]="selectedUser.height" /><br/>
-  <p>{{user.getBMI()}}</p>
-  <button (click)="onCheckAge()">
-    Check Age
-  </button>
-  <button (click)="getBMI()">
-    Check BMI
-  </button>
+  <p>BMI {{getBMI()}}</p>
+  <button (click)="onCheckAge()">Check Age</button>
 </div>
 <button (click)="isEditMode=false">DETAILS</button>
 </section>

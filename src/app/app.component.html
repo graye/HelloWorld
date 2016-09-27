@@ -1,10 +1,11 @@
 <section *ngIf="!isEditMode">
   <ul>
     <li *ngFor="let item of users | filterPipe;let i = index;" (click)="selectedUser=item" class="user-selector">
-      {{i}} : {{item.name}} <span class="age">{{item.age}}</span><button (click)="deleteUser(i)">Remove User</button>
+      {{i}} : {{item.name}} <span class="age">{{item.age | myPipe}}</span><button (click)="deleteUser(i)">Remove User</button>
     </li>
   </ul>
   <button (click)="deleteUser(0)">Remove first user</button>
+  <button (click)="addUser()">Add User</button>
 <h1>{{title}}</h1>
 <h1>Detail {{[1,2,3] | sumPipe}}</h1>
 <div>

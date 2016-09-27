@@ -40,4 +40,16 @@ export class AppComponent {
   deleteUser(index: number){
     this.users.splice(index, 1);
   }
+
+  addUser(){
+
+    var tmpUser = new User('NewUser', 150, '1234', 150, 60);
+    this.users.push(tmpUser);
+
+    /*let tempUsers:Array<User> = [];
+    this.users.forEach(item=>{
+      tempUsers.push(item);
+    });
+    this.users = tempUsers;*/
+  }
 }
